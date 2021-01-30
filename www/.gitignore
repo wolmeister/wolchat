@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Debug
+npm-debug.log*
+
+# Next.js
+.next/
+out/
+
+# Production
+build/
