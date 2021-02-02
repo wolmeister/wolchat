@@ -1,6 +1,20 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function HomePage() {
+  useEffect(() => {
+    // Test ws
+    const ws = new WebSocket('ws:/localhost:8080');
+    ws.addEventListener('open', () => {
+      console.log('ws connected');
+    });
+
+    // Test api
+    fetch('/api/health')
+      .then(res => res.json())
+      .then(console.log);
+  });
+
   return (
     <div className="min-h-screen flex justify-center items-center">
       <main>
